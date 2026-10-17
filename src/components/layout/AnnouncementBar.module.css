@@ -1,0 +1,37 @@
+.bar {
+  background: var(--color-dark);
+  color: var(--color-white);
+  height: var(--announcement-height);
+  overflow: hidden;
+  position: relative;
+}
+
+.inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  gap: 4rem;
+  animation: marquee 28s linear infinite;
+  white-space: nowrap;
+}
+
+.item {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 0 var(--space-8);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.track:hover {
+  animation-play-state: paused;
+}

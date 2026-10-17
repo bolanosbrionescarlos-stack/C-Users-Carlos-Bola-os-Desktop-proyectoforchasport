@@ -1,0 +1,207 @@
+@import 'tailwindcss';
+
+/*
+|--------------------------------------------------------------------------
+| Forcha Sport · Design System (Tailwind CSS v4)
+|--------------------------------------------------------------------------
+| Colores y tipografía del sitio original, ahora como tokens de Tailwind.
+| Genera clases como bg-primary, font-display, text-dark...
+*/
+
+@theme {
+    --color-primary: #ff5500;
+    --color-primary-dark: #cc4400;
+    --color-primary-light: #ff7a00;
+
+    --color-black: #0a0a0a;
+    --color-dark: #111111;
+    --color-dark-2: #1a1a1a;
+    --color-dark-3: #222222;
+
+    --color-surface: #f8f8f8;
+
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-danger: #ef4444;
+    --color-info: #3b82f6;
+
+    --font-display: 'Barlow Condensed', ui-sans-serif, system-ui, sans-serif;
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+    --container-shop: 1320px;
+
+    --animate-fade-in-up: fade-in-up 0.6s ease both;
+
+    @keyframes fade-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Base
+|--------------------------------------------------------------------------
+*/
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply font-sans text-dark bg-white antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-display font-bold leading-tight;
+    }
+
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-gray-100;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-gray-400 rounded-full;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-primary;
+    }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Componentes (equivalente a .btn / .badge / .input del sitio original)
+|--------------------------------------------------------------------------
+*/
+
+@layer components {
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 border-2 border-transparent px-7 py-3
+            font-display text-base font-bold uppercase tracking-wide transition duration-200
+            cursor-pointer text-center;
+    }
+
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 border-2 border-primary bg-primary px-7 py-3
+            font-display text-base font-bold uppercase tracking-wide text-white transition duration-200
+            cursor-pointer text-center
+            hover:bg-primary-dark hover:border-primary-dark hover:shadow-[0_4px_20px_rgba(255,85,0,0.35)] hover:-translate-y-px;
+    }
+
+    .btn-dark {
+        @apply inline-flex items-center justify-center gap-2 border-2 border-dark bg-dark px-7 py-3
+            font-display text-base font-bold uppercase tracking-wide text-white transition duration-200
+            cursor-pointer text-center hover:bg-gray-800 hover:-translate-y-px;
+    }
+
+    .btn-outline {
+        @apply inline-flex items-center justify-center gap-2 border-2 border-gray-300 bg-transparent px-7 py-3
+            font-display text-base font-bold uppercase tracking-wide text-dark transition duration-200
+            cursor-pointer text-center hover:border-dark;
+    }
+
+    .btn-outline-light {
+        @apply inline-flex items-center justify-center gap-2 border-2 border-white bg-transparent px-7 py-3
+            font-display text-base font-bold uppercase tracking-wide text-white transition duration-200
+            cursor-pointer whitespace-nowrap hover:bg-white hover:text-black;
+    }
+
+    .btn-sm {
+        @apply px-5 py-2 text-sm;
+    }
+
+    .btn-lg {
+        @apply px-10 py-4 text-lg;
+    }
+
+    .btn:disabled {
+        @apply opacity-50 cursor-not-allowed translate-y-0;
+    }
+
+    .badge {
+        @apply inline-flex items-center rounded-sm px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide;
+    }
+
+    .badge-sale {
+        @apply inline-flex items-center rounded-sm bg-primary px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-white;
+    }
+
+    .badge-new {
+        @apply inline-flex items-center rounded-sm bg-dark px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-white;
+    }
+
+    .badge-success {
+        @apply inline-flex items-center rounded-sm bg-success px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-white;
+    }
+
+    .badge-warning {
+        @apply inline-flex items-center rounded-sm bg-warning px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-white;
+    }
+
+    .badge-danger {
+        @apply inline-flex items-center rounded-sm bg-danger px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-white;
+    }
+
+    .badge-info {
+        @apply inline-flex items-center rounded-sm bg-info px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-white;
+    }
+
+    .input {
+        @apply w-full rounded-md border-[1.5px] border-gray-200 bg-white px-4 py-3 text-base text-dark
+            outline-none transition focus:border-primary;
+    }
+
+    /*
+      Móvil (panel admin y tienda):
+      - Evita el zoom automático de iOS al enfocar un campo (necesita ≥16px).
+      - Anchos fijos (!w-*) se anulan para que los formularios usen todo el
+        available y no provoquen scroll horizontal en pantallas angostas.
+    */
+    @media (max-width: 640px) {
+        .input {
+            font-size: 16px;
+        }
+
+        .input[class*='!w-'] {
+            width: 100%;
+        }
+    }
+
+    .section-heading {
+        @apply mb-12 text-center;
+    }
+
+    .section-heading h2 {
+        @apply text-4xl font-black uppercase text-dark md:text-5xl;
+    }
+
+    .section-heading p {
+        @apply mt-3 text-lg text-gray-500;
+    }
+
+    .divider {
+        @apply mx-auto my-4 h-[3px] w-16 bg-primary;
+    }
+
+    .shop-container {
+        @apply mx-auto w-full max-w-shop px-4 md:px-6;
+    }
+}
