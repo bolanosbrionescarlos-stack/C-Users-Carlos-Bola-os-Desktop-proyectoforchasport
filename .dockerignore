@@ -9,6 +9,7 @@ laravel/node_modules
 laravel/vendor
 laravel/.env
 laravel/.env.*
+!laravel/.env.example
 laravel/storage/logs/*
 laravel/public/build
 laravel/public/hot
