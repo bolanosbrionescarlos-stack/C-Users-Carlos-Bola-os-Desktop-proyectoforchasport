@@ -8,7 +8,9 @@ PROYECTOFORCHASPORT
 laravel/node_modules
 laravel/vendor
 laravel/.env
-laravel/.env.*
+# Ojo: NO usar comodin .env.* aqui: excluiria laravel/.env.example y romperia
+# el build (el contexto viene del clone de git, asi que los .env reales no
+# estan incluidos de todos modos).
 !laravel/.env.example
 laravel/storage/logs/*
 laravel/public/build
