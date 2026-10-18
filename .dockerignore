@@ -1,0 +1,15 @@
+.git
+.github
+.next
+node_modules
+npm-debug.log
+prisma/dev.db
+PROYECTOFORCHASPORT
+laravel/node_modules
+laravel/vendor
+laravel/.env
+laravel/.env.*
+laravel/storage/logs/*
+laravel/public/build
+laravel/public/hot
+laravel/database/database.sqlite
