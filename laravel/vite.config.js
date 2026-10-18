@@ -8,14 +8,6 @@ export default defineConfig({
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
-            fonts: [
-                bunny('Barlow Condensed', {
-                    weights: [400, 600, 700, 800, 900],
-                }),
-                bunny('Inter', {
-                    weights: [300, 400, 500, 600, 700],
-                }),
-            ],
         }),
         tailwindcss(),
     ],
