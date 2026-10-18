@@ -6,15 +6,16 @@
     "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@prisma/client": "^7.10.1",
+    "@prisma/client": "^6.19.3",
     "@types/bcryptjs": "^2.4.6",
     "bcryptjs": "^3.0.3",
     "next": "16.4.2",
     "next-auth": "^5.0.0-beta.32",
-    "prisma": "^8.0.0-rc.23",
+    "prisma": "^6.19.3",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "zustand": "^5.0.15"
