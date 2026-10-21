@@ -1,17 +1,15 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": null,
-  "outputDirectory": null,
-  "rootDirectory": "laravel",
-  "services": {
-    "app": {
-      "root": "laravel",
-      "entrypoint": "Dockerfile.vercel",
-      "runtime": "container"
+  "buildCommand": "echo 'skipping build'",
+  "outputDirectory": "laravel/public",
+  "builds": [
+    {
+      "src": "laravel/Dockerfile.vercel",
+      "use": "@vercel/docker"
     }
-  },
+  ],
   "rewrites": [
-    { "source": "/(.*)", "destination": { "service": "app" } }
+    { "source": "/(.*)", "destination": "/laravel/server.php" }
   ]
 }
