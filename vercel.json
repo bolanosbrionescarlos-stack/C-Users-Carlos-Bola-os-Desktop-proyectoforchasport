@@ -1,1 +1,1 @@
-﻿{"$schema":"https://openapi.vercel.sh/vercel.json","framework":null,"builds":[{"src":"Dockerfile.vercel","use":"@vercel/docker"}],"routes":[{"src":"/(.*)","dest":"/"}]}
+{"$schema": "https://openapi.vercel.sh/vercel.json", "framework": null, "builds": [{"src": "Dockerfile.vercel", "use": "@vercel/docker"}], "routes": [{"src": "/(.*)", "dest": "/"}]}
