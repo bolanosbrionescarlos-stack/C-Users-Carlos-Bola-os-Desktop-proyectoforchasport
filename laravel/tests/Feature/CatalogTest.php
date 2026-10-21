@@ -50,7 +50,7 @@ class CatalogTest extends TestCase
         $ropa = Category::factory()->create(['slug' => 'ropa-deportiva']);
         $zapatillas = Category::factory()->create(['slug' => 'zapatillas']);
 
-        Product::factory()->create(['category_id' => $ropa->id, 'active' => true, 'name' => 'Short Running Elite']);
+        Product::factory()->create(['category_id' => $ropa->id, 'active' => true, 'name' => 'Short Running Elite', 'on_sale' => false]);
         Product::factory()->create([
             'category_id' => $zapatillas->id,
             'active' => true,
