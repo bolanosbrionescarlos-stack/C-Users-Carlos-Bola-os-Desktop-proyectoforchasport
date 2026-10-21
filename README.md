@@ -140,3 +140,4 @@ vendor/bin/pint --format agent    # Formatear código
 - Las imágenes de productos deben almacenarse en un sistema persistente en producción (S3/R2/Cloudinary) si se subirán desde el panel.
 - Los pedidos se guardan con código único `FS-...`
 - Todos los totales se calculan desde la base de datos.
+"# FORCHASPORT-." 
