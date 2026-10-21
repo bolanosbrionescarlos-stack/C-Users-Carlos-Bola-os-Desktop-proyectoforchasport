@@ -3,10 +3,7 @@
   "builds": [
     {
       "src": "laravel/Dockerfile.vercel",
-      "use": "@vercel/docker",
-      "config": {
-        "buildContext": "laravel"
-      }
+      "use": "@vercel/docker"
     }
   ],
   "routes": [
