@@ -1,6 +1,7 @@
 .git
 .env
-.env.*
+.env.local
+.env.*.local
 !.env.example
 database/database.sqlite
 node_modules
