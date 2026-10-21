@@ -1,9 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
+  "buildCommand": null,
+  "outputDirectory": null,
+  "rootDirectory": "laravel",
   "services": {
     "app": {
-      "root": ".",
+      "root": "laravel",
       "entrypoint": "Dockerfile.vercel",
       "runtime": "container"
     }
